@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Nexus</title>
+<meta name="theme-color" content="#F7F4EE">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Nexus">
+<link rel="manifest" href="data:application/manifest+json;base64,ewogICJuYW1lIjogIk5leHVzIiwKICAic2hvcnRfbmFtZSI6ICJOZXh1cyIsCiAgImRlc2NyaXB0aW9uIjogIk5leHVzIHZvaWNlIGFzc2lzdGFudCIsCiAgInN0YXJ0X3VybCI6ICIuIiwKICAic2NvcGUiOiAiLiIsCiAgImRpc3BsYXkiOiAic3RhbmRhbG9uZSIsCiAgImJhY2tncm91bmRfY29sb3IiOiAiI0Y3RjRFRSIsCiAgInRoZW1lX2NvbG9yIjogIiNGN0Y0RUUiLAogICJvcmllbnRhdGlvbiI6ICJwb3J0cmFpdCIsCiAgImljb25zIjogWwogICAgeyAic3JjIjogImRhdGE6aW1hZ2UvcG5nO2Jhc2U2NCxpVkJPUncwS0dnb0FBQUFOU1VoRVVnQUFBTUFBQUFEQUNBWUFBQUJTM0d3SEFBQUVpMGxFUVZSNG5PM2N6VkhrUmdDR1lRM2xPSHdsSkdKd0JKeDg4b2tJSEFNaGNYVWkrTEt6eGJLakdmMTBTOTM5UGM5NUM2U3E3MVZyWUl2TDFKaVAxNWZQczYrQnVwN2YzaTluWDhQVnFSZGk3RnlkRmNYaDM5VG9lZVRJR0E3N1JvYlBXa2VFVVAwYkdENTcxUXloMmhjMmZFcXJFVUx4TDJqNDFGWXloS2RTWDJpYWpKOWpsTnhaa1pJTW43UHNQUTEybndER3o1bjI3bTlYQU1aUEMvYnNjSE1BeGs5THR1NXhVd0RHVDR1MjdISjFBTVpQeTlidWMxVUF4azhQMXV4MGNRREdUMCtXN25WUkFNWlBqNWJzOW1FQXhrL1BIdTIzNkgrRmdON2NEY0RUbnhIYzIvRnNBTWJQU09iMjdCV0lhRGNEOFBSblJMZDI3UVFnMm04QmVQb3pzdS83ZGdJUTdaY0FQUDFKOEhYblRnQ2kvUXpBMDU4azE3MDdBWWdtQUtKZHBzbnJEN21jQUVRVEFORUVRRFFCRU8zSkIyQ1NPUUdJSmdDaUNZQm9BaUNhQUlnbUFLSUpnR2dDSUpvQWlDWUFvZ21BYUFJZ21nQ0lKZ0NpQ1lCb0FpQ2FBSWdtQUtJSmdHZ0NJSm9BaUNZQW9nbUFhQUlnbWdDSUpnQ2lDWUJvQWlDYUFJajJ4OWtYa09UUHYvOWQvRy8vKytldmlsZkMxY1dmUjY5bnplQWZFVVFkQXFpZzVQQy9FMEpaQWlpazV1am5pR0UvSDRJTE9HUDhaMzdma1RnQmRtaHBnRTZEYlp3QUc3VTAvbWxxNzNwNklZQU5XaDFicTlmVk1nR3MxUHJJV3IrKzFnaGdoVjdHMWN0MXRrQUFDL1UycXQ2dTl5d0NXS0RYTWZWNjNVY1N3QU85ajZqMzY2OU5BSGVNTXA1UjdxTUdBUkJOQUROR2UycU9kaitsQ09DR1VjY3k2bjN0SVFDaUNZQm9BdmhtOU5lRTBlOXZMUUVRVFFCZnBEd2RVKzV6Q1FFUVRRQkVFd0RSQlBCRDJudHgydjNPRVFEUkJFQTBBUkJOQUVRVEFORUVRRFFCRUUwQVJCTUEwUVJBTkFIOGtQYm54ZFB1ZDQ0QWlDWUFvZ21BYUFMNEl1VzlPT1UrbHhBQTBRVHd6ZWhQeDlIdmJ5MEJFRTBBUkJQQURhTytKb3g2WDNzSVlNWm9ZeG50ZmtvUkFORUVjTWNvVDgxUjdxTUdBVHpRKzNoNnYvN2FCTEJBcnlQcTlicVBKSUNGZWh0VGI5ZDdGZ0dzME11b2Vybk9GZ2hncGRiSDFmcjF0VVlBRzdRNnNsYXZxMlVDMktpMXNiVjJQYjI0Zkx5K2ZKNTlFYjA3ODArTkcvNCtUb0FDemhxaDhlL25CS2lnNW9sZzlHVUpvS0tTSVJoK0hRSTQwSm9nRFA0WUFpQ2FEOEZFRXdEUkJFQTBBUkJOQUVRVEFORUVRRFFCRUUwQVJCTUEwUVJBTkFFUVRRQkVFd0RSQkVBMEFSQk5BRVFUQU5FRVFEUUJFRTBBUkJNQTBRUkFOQUVRVFFCRUV3RFJCRUEwQVJCTkFFUjdlbjU3djV4OUVYQVdKd0RSQkVBMEFSQk5BRVI3bXFacDhrR1lSTTl2N3hjbkFORUVRTFNmQVhnTklzbDE3MDRBb3YwU2dGT0FCRjkzN2dRZzJtOEJPQVVZMmZkOU93R0lkak1BcHdBanVyVnJKd0RSWmdOd0NqQ1N1VDNmUFFGRXdBanU3ZGdyRU5FZUJ1QVVvR2VQOXJ2b0JCQUJQVnF5MjhXdlFDS2dKMHYzdXVvemdBam93WnFkcnY0UUxBSmF0bmFmbTM0S0pBSmF0R1dYbTM4TUtnSmFzbldQdTM0UElBSmFzR2VIdTM4UkpnTE90SGQvUmNmNzhmcnlXZkxyd1p4U0Q5NmkveFhDYWNBUlN1NnMybUNkQnBSVzR3RmIvWWt0QlBhcStXWngyQ3VMRUZqcmlGZnF3OS9aaGNBalIzNldQUFZEcXhpNE91c0hLUDhEMGRaSnF2ZjlIMTBBQUFBQVNVVk9SSzVDWUlJPSIsICJzaXplcyI6ICIxOTJ4MTkyIiwgInR5cGUiOiAiaW1hZ2UvcG5nIiwgInB1cnBvc2UiOiAiYW55IiB9LAogICAgeyAic3JjIjogImRhdGE6aW1hZ2UvcG5nO2Jhc2U2NCxpVkJPUncwS0dnb0FBQUFOU1VoRVVnQUFBZ0FBQUFJQUNBWUFBQUQwZU5UNkFBQU9mMGxFUVZSNG5PM2N5M1VieHdKRjBhYldpOE5UaGFRWUhJRkdIbm1rQ0J5RFF0TFVpY2dEUFlnZ0NCRDlxZXI2M0wwRDhDSzdlL0VlVk1ONldlalNqNjlmZnJiK0dRQksrZnp0KzB2cm40RzMzSkJHRER6QUs0RndQaGY4Qk1ZZVlEdFJVSmVMVzRIQkJ5aFBFSlRsWWhaZzhBSE9Kd2lPY2ZGMk12b0EvUkFEMjdsZ0d4aDlnUDZKZ1hWY3BDZU1Qc0M0eE1Cakxzd0RoaDlnSGtMZ1BSZmtpdEVIbUo4WStNVkZXQXcvUUtMMEVJais1UTAvQUtraEVQbExHMzRBYnFXRlFOUXZhL2dCZUNZbEJDSitTY01Qd0Zhemg4Q24xajlBYmNZZmdEMW0zNDlwNjJiMkd3ZkFlV1k4RFpqdUZ6TDhBTlF5VXdoTTlRckErQU5RMDB3N00wWEp6SFJEQUJqRDZLY0J3NThBR0g4QVdoaDlmNFlPZ05FdlBnQmpHM21IaGp5K0dQbUNBekNuMFY0SkRIY0NZUHdCNk5Gbyt6UlVBSXgyY1FISU10Sk9EWEZjTWRJRkJZQmw2ZitWUVBjbkFNWWZnQkgxdmw5ZEIwRHZGdzhBUHRMempuVWJBRDFmTkFCWXE5Yzk2eklBZXIxWUFMQkhqN3ZXWFFEMGVKRUE0S2plOXEyckFPanQ0Z0JBU1QzdFhEY0IwTk5GQVlCYWV0bTdMZ0tnbDRzQkFHZm9ZZmVhQjBBUEZ3RUF6dFo2LzVvR1FPdGZIZ0JhYXJtRHpRTEErQU5BdXoxc0VnREdId0JldGRqRjB3UEErQVBBZTJmdjQ2a0JZUHdCNExFemQvSzBBREQrQVBEY1dYdDVTZ0FZZndCWTc0emRiUDd2QUFBQTU2c2VBRDc5QThCMnRmZXphZ0FZZndEWXIrYU9WZ3NBNHc4QXg5WGFVOThCQUlCQVZRTEFwMzhBS0tmR3JoWVBBT01QQU9XVjN0ZWlBV0Q4QWFDZWtqdnJPd0FBRUtoWUFQajBEd0QxbGRyYklnRmcvQUhnUENWMjF5c0FBQWgwT0FCOCtnZUE4eDNkWHljQUFCRG9VQUQ0OUE4QTdSelo0ZDBCWVB3Qm9MMjllK3dWQUFBRTJoVUFQdjBEUUQvMjdMSVRBQUFJdERrQWZQb0hnUDVzM1djbkFBQVFhRk1BK1BRUEFQM2FzdE5PQUFBZzBPb0E4T2tmQVBxM2RxK2RBQUJBb0ZVQjROTS9BSXhqelc0N0FRQ0FRQUlBQUFJOURRREgvd0F3bm1mNzdRUUFBQUo5R0FBKy9RUEF1RDdhY1NjQUFCQklBQUJBb0ljQjRQZ2ZBTWIzYU0rZEFBQkFJQUVBQUlIdUJvRGpmd0NZeDcxZGR3SUFBSUVFQUFBRWVoY0FqdjhCWUQ2MysrNEVBQUFDQ1FBQUNDUUFBQ0RRbXdEdy9oOEE1blc5ODA0QUFDQ1FBQUNBUUFJQUFBTDlEZ0R2L3dGZ2ZwZTlkd0lBQUlFRUFBQUVFZ0FBRUVnQUFFQ2dsMlh4QlVBQVNPTUVBQUFDQ1FBQUNDUUFBQ0NRQUFDQVFBSUFBQUlKQUFBSUpBQUFJTkFuL3dZQUFPUnhBZ0FBZ1FRQUFBUVNBQUFRU0FBQVFDQUJBQUNCQkFBQUJCSUFBQkJJQUFCQUlBRUFBSUVFQUFBRUVnQUFFRWdBQUVBZ0FRQUFnUVFBQUFRU0FBQVFTQUFBUUNBQkFBQ0JCQUFBQkJJQUFCQklBQUJBSUFFQUFJRUVBQUFFRWdBQUVFZ0FBRUFnQVFBQWdRUUFBQVFTQUFBUVNBQUFRQ0FCQUFDQkJBQUFCQklBQUJCSUFBQkFJQUVBQUlFRUFBQUVFZ0FBRUVnQUFFQWdBUUFBZ1FRQUFBUVNBQUFRU0FBQVFDQUJBQUNCQkFBQUJCSUFBQkJJQUFCQUlBRUFBSUVFQUFBRUVnQUFFRWdBQUVBZ0FRQUFnUVFBQUFRU0FBQVFTQUFBUUNBQkFBQ0JCQUFBQkJJQUFCQklBQUJBSUFFQUFJRUVBQUFFRWdBQUVFZ0FBRUFnQVFBQWdRUUFBQVFTQUFBUVNBQUFRQ0FCQUFDQkJBQUFCQklBQUJCSUFBQkFJQUVBQUlFRUFBQUVFZ0FBRUVnQUFFQ2cvN1grQVlCNi92anJuOFAvalgvLy9yUEFUd0wwNXVYSDF5OC9XLzhRd0g0bFJuNHZjUURqRWdBd21KYUQvNHdnZ0hFSUFPaGN6NFAvakNDQWZna0E2TkRJby8rSUdJQytDQURveEl5ai80Z1lnUFlFQURTV05QeTNoQUMwSXdDZ2dlVFJmMFFNd0xrRUFKekk4RDhuQk9BY0FnQk9ZUGkzRXdKUWwzOEtHQ296L3Z1NGJsQ1hFd0NveElDVjR6UUF5aE1BVUpqaHIwY0lRRGxlQVVCQnhyOHUxeGZLY1FJQUJSaW04emtOZ0dPY0FNQkJ4cjhOMXgyT0VRQndnQkZxeS9XSC9id0NnQjBNVDMrOEVvQnRuQURBUnNhL1QrNExiQ01BWUFNajB6ZjNCOVlUQUxDU2NSbUQrd1RyQ0FCWXdhaU14ZjJDNTN3SkVENWdTTWJueTRGd254TUFlTUQ0ejhGOWhQc0VBTnhoTk9iaWZzSjdBZ0J1R0lzNXVhL3dsZ0FBZ0VBQ0FLNzRsRGczOXhkZUNRRDRQK09Rd1gyR1h3UUFMRVloamZzTkFnQ01RU2ozblhRQ2dHaEdJSnY3VHpJQkFBQ0JCQUN4ZlBwaldUd0g1QklBUlBKSG4ydWVCeElKQU9MNFk4ODluZ3ZTQ0FBQUNDUUFpT0pUSGgveGZKQkVBQkRESDNmVzhKeVFRZ0FBUUNBQlFBU2Y2dGpDODBJQ0FRQUFnUVFBMC9OcGpqMDhOOHhPQURBMWY4UTV3dlBEekFRQUFBUVNBRXpMcHpkSzhCd3hLd0VBQUlFRUFGUHlxWTJTUEUvTVNBQUFRQ0FCQUFDQkJBRFRjVnhMRFo0clppTUFBQ0NRQUdBcVBxVlJrK2VMbVFnQUFBZ2tBQUFna0FCZ0dvNW5PWVBuakZrSUFBQUlKQUFBSUpBQVlBcU9aVG1UNTQwWkNBQUFDQ1FBQUNDUUFBQ0FRQUtBNFhrZlN3dWVPMFluQUFBZ2tBQUFnRUFDQUFBQ0NRQ0c1ajBzTFhuK0dKa0FBSUJBQWdBQUFna0FBQWdrQUFBZ2tBQUFnRUFDQUFBQ0NRQ0c1WC9Cb2dlZVEwWWxBQUFna0FBQWdFQUNBQUFDQ1FBQUNDUUFBQ0NRQUFDQVFBSUFBQUlKQUFBSUpBQUFJSkFBQUlCQUFnQUFBZ2tBQUFna0FBQWdrQUFBZ0VBQ0FBQUNDUUFBQ0NRQUdOYS9mLy9aK2tjQXp5SERFZ0FBRUVnQUFFQWdBUUFBZ1FRQUFBUVNBQUFRU0FBQVFDQUJ3TkQ4TDFpMDVQbGpaQUlBQUFJSkFBQUlKQUFBSUpBQVlIamV3OUtDNTQ3UkNRQUFDQ1FBQUNDUUFBQ0FRQUtBS1hnZnk1azhiOHhBQUFCQUlBRUFBSUVFQU5Od0xNc1pQR2ZNUWdBQVFDQUJBQUNCQkFCVGNUeExUWjR2WmlJQUFDQ1FBR0E2UHFWUmcrZUsyUWdBQUFna0FBQWdrQUJnU281cktjbnp4SXdFQUFBRUVnQk15NmMyU3ZBY01Tc0JBQUNCQkFCVDgrbU5JencvekV3QU1EMS94Tm5EYzhQc0JBQUFCQklBUlBCcGppMDhMeVFRQUFBUVNBQVF3NmM2MXZDY2tFSUFFTVVmZHo3aStTQ0pBQUNBUUFLQU9EN2xjWS9uZ2pRQ2dFaisySFBOODBBaUFVQXNmL1JaRnM4QnVRUUFBQVFTQUVUejZTK2IrMDh5QVVBOEk1REpmU2VkQUlERkdLUnh2MEVBd0c5R0lZUDdETDhJQUxoaUhPYm0vc0lyQVFBQWdRUUEzUEFwY1U3dUs3d2xBT0FPWXpFWDl4UGVFd0R3Z05HWWcvc0k5NzM4K1BybForc2ZBbnIzeDEvL3RQNFIyTWp3dzhlY0FNQUt4bVFzN2hjOEp3QmdKYU15QnZjSjFoRUFzSUZ4Nlp2N0Erc0pBTmpJeVBUSmZZRnRmQWtRRHZEbHdQWU1QK3pqQkFBT01ENXR1ZjZ3bndDQWc0eFFHNjQ3SE9NVkFCVGtsVUI5aGgvS2NBSUFCUm1udWx4ZktNY0pBRlRpTktBY3d3L2xDUUNvVEFqc1ovaWhIcThBb0RJanRvL3JCblU1QVlBVE9RMTR6dkRET1FRQU5DQUUzalA4Y0M0QkFJMGx4NERSaDNZRUFIUWlLUVFNUDdRbkFLQkRNOGFBMFllK0NBRG8zTWd4WVBTaFh3SUFCdE56RUJoOEdJY0FnTUcxREFLREQrTVNBREN4RW5GZzVHRk9BZ0FBQXZtbmdBRWdrQUFBZ0VBQ0FBQUNDUUFBQ0NRQUFDQ1FBQUNBUUFJQUFBSUpBQUFJSkFBQUlKQUFBSUJBQWdBQUFna0FBQWdrQUFBZ2tBQUFnRUFDQUFBQ0NRQUFDQ1FBQUNDUUFBQ0FRQUlBQUFJSkFBQUlKQUFBSUpBQUFJQkFBZ0FBQWdrQUFBZ2tBQUFna0FBQWdFQUNBQUFDQ1FBQUNDUUFBQ0NRQUFDQVFBSUFBQUlKQUFBSUpBQUFJSkFBQUlCQUFnQUFBZ2tBQUFna0FBQWdrQUFBZ0VBQ0FBQUNDUUFBQ0NRQUFDQ1FBQUNBUUFJQUFBSUpBQUFJSkFBQUlKQUFBSUJBQWdBQUFna0FBQWdrQUFBZ2tBQUFnRUFDQUFBQ0NRQUFDQ1FBQUNDUUFBQ0FRQUlBQUFJSkFBQUlKQUFBSUpBQUFJQkFBZ0FBQWdrQUFBZ2tBQUFna0FBQWdFQUNBQUFDQ1FBQUNDUUFBQ0NRQUFDQVFBSUFBQUlKQUFBSUpBQUFJSkFBQUlCQUFnQUFBZ2tBQUFqMDZmTzM3eSt0ZndnQTRGeE9BQUFna0FBQWdFQUNBQUFDQ1FBQUNDUUFBQ0NRQUFDQVFBSUFBQUo5V3BabDhXOEJBRUNPejkrK3Z6Z0JBSUJBQWdBQUFna0FBQWdrQUFBZzBPOEE4RVZBQUpqZlplK2RBQUJBSUFFQUFJRUVBQUFFZWhNQXZnY0FBUE82M25rbkFBQVFTQUFBUUNBQkFBQ0IzZ1dBN3dFQXdIeHU5OTBKQUFBRUVnQUFFT2h1QUhnTkFBRHp1TGZyVGdBQUlKQUFBSUJBRHdQQWF3QUFHTitqUFhjQ0FBQ0JCQUFBQlBvd0FMd0dBSUJ4ZmJUalRnQUFJTkRUQUhBS0FBRGplYmJmVGdBQUlKQUFBSUJBcXdMQWF3QUFHTWVhM1hZQ0FBQ0JWZ2VBVXdBQTZOL2F2WFlDQUFDQk5nV0FVd0FBNk5lV25YWUNBQUNCTmdlQVV3QUE2TS9XZlhZQ0FBQ0JkZ1dBVXdBQTZNZWVYWFlDQUFDQmRnZUFVd0FBYUcvdkhoODZBUkFCQU5ET2tSMzJDZ0FBQWgwT0FLY0FBSEMrby92ckJBQUFBaFVKQUtjQUFIQ2VFcnRiN0FSQUJBQkFmYVgyMWlzQUFBaFVOQUNjQWdCQVBTVjN0dmdKZ0FnQWdQSks3MnVWVndBaUFBREtxYkdydmdNQUFJR3FCWUJUQUFBNHJ0YWVWajBCRUFFQXNGL05IYTMrQ2tBRUFNQjJ0ZmZUZHdBQUlOQXBBZUFVQUFEV08yTTNUenNCRUFFQThOeFplM25xS3dBUkFBQ1BuYm1UcDM4SFFBUUF3SHRuNzJPVEx3R0tBQUI0MVdJWG0vMWZBQ0lBQU5ydFlkUC9EVkFFQUpDczVRNDIvM2NBUkFBQWlWcnZYL01BV0piMkZ3RUF6dFREN25VUkFNdlN4OFVBZ05wNjJidHVBbUJaK3Jrb0FGQkRUenZYVlFBc1MxOFhCd0JLNlczZnVndUFaZW52SWdIQUVUM3VXcGNCc0N4OVhpd0EyS3JYUGVzMkFKYWwzNHNHQUd2MHZHTmRCOEN5OUgzeEFPQ1IzdmVyNngvdTFvK3ZYMzYyL2hrQTRDTzlELzlGOXljQTEwYTVxQUJrR21tbmhncUFaUm5yNGdLUVk3UjlHdXFIdmVXVkFBQ3RqVGI4RjhPZEFGd2I5YUlETUllUmQyam9BRmlXc1M4K0FPTWFmWCtHL3VGdmVTVUFRRzJqRC8vRjhDY0ExMmE1S1FEMGFhYWRtZVlYdWVVMEFJQlNaaHIraStsK29WdENBSUM5Wmh6K2k2bGVBZHd6ODgwRG9KN1o5MlBxWCs2VzB3QUFucGw5K0M4aWZzbGJRZ0NBV3luRGZ4SDF5OTRTQWdDa0RmOUY1Qzk5U3dnQTVFa2Qvb3ZvWC82V0VBQ1lYL3J3WDdnSUQ0Z0JnSGtZL2ZkY2tDZUVBTUM0RFA5akxzd0dZZ0NnZjBaL0hSZHBKekVBMEEranY1MExWb0FZQURpZjBUL0d4YXRBRUFDVVovRExjakZQSUFnQXRqUDRkYm00allnQ2dGZkcvbnovQVJ5OWR4UUR3bGdDQUFBQUFFbEZUa1N1UW1DQyIsICJzaXplcyI6ICI1MTJ4NTEyIiwgInR5cGUiOiAiaW1hZ2UvcG5nIiwgInB1cnBvc2UiOiAiYW55IiB9LAogICAgeyAic3JjIjogImRhdGE6aW1hZ2UvcG5nO2Jhc2U2NCxpVkJPUncwS0dnb0FBQUFOU1VoRVVnQUFBTUFBQUFEQUNBWUFBQUJTM0d3SEFBQURHMGxFUVZSNG5PM2NzWEVUVVJSQVVjTzREbEpLb2dZcUlDSWlvZ0pxb0NSU0dvSEVudEY0TEV1eWRxWC8vejBudGxmdno3eTd1MHIwOEFBQUFBQUFBQUFBQUFBQUFBQUFNTHdQVzE3c3o3Y3YvN2E4SGh6eitlZnZUWGIzNHhZWGdWa0pnRFFCa0NZQTBnUkFtZ0JJRXdCcEFpQk5BS1FKZ0RRQmtDWUEwZ1JBbWdCSUV3QnBBaUJOQUtRSmdEUUJrQ1lBMGdSQW1nQklFd0JwQWlCTkFLUUpnRFFCa0NZQTBnUkFtZ0JJRXdCcEFpQk5BS1FKZ0RRQmtDWUEwZ1JBbWdCSUV3QnBBaUJOQUtRSmdEUUJrQ1lBMGdSQW1nQkllN3ozQUNXZnZ2ODYrMi8vL3ZpNjR5UThFOENPTGxuNFUvOHJpSDBJWUFmWExQNnBhd3BoV3dMWXlCNUxmK3B6eEhBOVg0STNjS3ZsSCtWelYrSUpjSVVSRnRDcjBYVThBZDVwaE9VL05ObzhzeERBTzR5NmJLUE9OVElCWEdqMEpSdDl2dEVJNEFLekxOY3NjNDVBQUdlYWJhbG1tL2RlQkhDR1daZHAxcmx2U1FBbnpMNUVzOCsvTndHOFlaWGxXZVVjZXhBQWFRSTRZclc3NW1ybjJZb0FYckhxc3F4NnJtc0lnRFFCa0NhQUYxWi9UVmo5ZkpjU0FHa0NPRkM1TzFiT2VRNEJrQ1lBMGdSQW1nQ2UxTjZMYStjOVJnQ2tDWUEwQVpBbUFOSUVRSm9BU0JNQWFRSWdUUUNrQ1lBMEFUeXAvYng0N2J6SENJQTBBWkFtQU5JRWNLRHlYbHc1NXprRVFKb0FYbGo5N3JqNitTNGxBTklFUUpvQVhySHFhOEtxNTdxR0FJNVliVmxXTzg5V0JFQ2FBTjZ3eWwxemxYUHNRUUFuekw0OHM4Ky9Od0djWWRZbG1uWHVXeExBbVdaYnB0bm12UmNCWEdDV3BacGx6aEVJNEVLakw5Zm84NDFHQU84dzZwS05PdGZJQlBCT295M2JhUFBNNHZIZUE4enNlZW51K1ZQakZ2ODZuZ0FidU5jU1d2N3JlUUpzNUhBWjkzd2lXUHB0Q1dBSGU3d2FXZng5Q0dCSEw1ZjJraUFzL0cwSTRJWXM5WGg4Q1NaTkFLUUpnRFFCa0NZQTBnUkFtZ0JJRXdCcEFpQk5BS1FKZ0RRQmtDWUEwZ1JBbWdCSUV3QnBBaUJOQUtRSmdEUUJrQ1lBMGdSQW1nQklFd0JwQWlCTkFLUUpnRFFCa0NZQTBnUkFtZ0JJRXdCcEFpQk5BS1FKZ0RRQmtDWUEwZ1JBbWdCSUV3QnBBaUJOQUtRSmdEUUJrQ1lBMGdRQUFBQUFBQUFBQUFBQUFBQUFBRXpnUDNLWWdoakU2MEFaQUFBQUFFbEZUa1N1UW1DQyIsICJzaXplcyI6ICIxOTJ4MTkyIiwgInR5cGUiOiAiaW1hZ2UvcG5nIiwgInB1cnBvc2UiOiAibWFza2FibGUiIH0sCiAgICB7ICJzcmMiOiAiZGF0YTppbWFnZS9wbmc7YmFzZTY0LGlWQk9SdzBLR2dvQUFBQU5TVWhFVWdBQUFnQUFBQUlBQ0FZQUFBRDBlTlQ2QUFBS0wwbEVRVlI0bk8zY3kzRWJSeFJBVWRpbE9MUjFTSTVCRVhpbGxWYU9RREU0SkcrVmlMM1FENkpBQ0ovNWRkOXpBbUFOMFYzejd2U0FQSjBBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQVBqaXQ3MHZZRW4vL3ZYbmYzdGZBd0J6KytQdmY2YVluYi92ZlFFQXdQWUVBQUFFQ1FBQUNCSUFBQkFrQUFBZ1NBQUFRSkFBQUlBZ0FRQUFRUUlBQUlJRUFBQUVDUUFBQ0JJQUFCQWtBQUFnU0FBQVFKQUFBSUFnQVFBQVFRSUFBSUlFQUFBRUNRQUFDQklBQUJBa0FBQWdTQUFBUUpBQUFJQWdBUUFBUVFJQUFJSUVBQUFFQ1FBQUNCSUFBQkFrQUFBZ1NBQUFRSkFBQUlBZ0FRQUFRUUlBQUlJRUFBQUVDUUFBQ0JJQUFCQWtBQUFnU0FBQVFKQUFBSUFnQVFBQVFRSUFBSUlFQUFBRUNRQUFDQklBQUJBa0FBQWdTQUFBUUpBQUFJQWdBUUFBUVFJQUFJSUVBQUFFQ1FBQUNCSUFBQkFrQUFBZ1NBQUFRSkFBQUlBZ0FRQUFRUUlBQUlJRUFBQUVDUUFBQ0JJQUFCQWtBQUFnU0FBQVFKQUFBSUFnQVFBQVFRSUFBSUlFQUFBRUNRQUFDQklBQUJBa0FBQWdTQUFBUUpBQUFJQWdBUUFBUVFJQUFJSUVBQUFFQ1FBQUNCSUFBQkFrQUFBZ1NBQUFRSkFBQUlBZ0FRQUFRUUlBQUlJRUFBQUVDUUFBQ0JJQUFCQWtBQUFnU0FBQVFKQUFBSUFnQVFBQVFRSUFBSUlFQUFBRUNRQUFDQklBQUJBa0FBQWdTQUFBUUpBQUFJQWdBUUFBUVFJQUFJSUVBQUFFQ1FBQUNCSUFBQkFrQUFBZ1NBQUFRSkFBQUlBZ0FRQUFRUUlBQUlJRUFBQUVDUUFBQ0JJQUFCQWtBQUFnU0FBQVFKQUFBSUFnQVFBQVFRSUFBSUlFQUFBRUNRQUFDQklBQUJBa0FBQWdTQUFBUUpBQUFJQWdBUUFBUVFJQUFJSUVBQUFFQ1FBQUNIcXo5d1VBNjNuNy91UFRQK1BUaDNjTFhBbHdOQUlBQnJmRWtILzA1NHNER0pjQWdNR3NQZkR2OGZKYUJBR01Rd0RBd1IxcDRQK0tJSUJ4Q0FBNG9KR0cvalhudjRjWWdHTVJBSEFRc3d6OTE0Z0JPQllCQUR1YmZmQmY4dlYzRmdLd0h3RUFPeWdPL1V1Y0NzQitCQUJzeU9CL25WTUIySllBZ0EwWS9MY1RBckFOL3dvWVZtYjRQOGJuQnV0eUFnQXJNY0NlNXpRQTFpTUFZR0VHLy9LRUFDelBLd0JZa09HL0xwOHZMTWNKQUN6QVlOcU8wd0JZaGhNQWVKTGh2dytmT3p4SEFNQVRES0Y5K2Z6aGNWNEJ3QU1NbnVQd1NnQWU0d1FBN21UNEg1TjFnZnNJQUxpRElYTnMxZ2R1SndEZ1JvYkxHS3dUM0VZQXdBME1sYkZZTC9nMVh3S0VLd3lTY2ZseUlGem5CQUJlWWZqUHdUckNaUUlBTGpBMDVtSTk0V2NDQUY0d0xPWmtYZUZIQWdBQWdnUUFuUEdVT0RmckM5OEpBUGpDY0dpd3p2Q1pBSUNUb1ZCanZVRUFnR0VRWmQycEV3Q2tHUUp0MXA4eUFRQUFRUUtBTEU5L25FNzJBVjBDZ0NRM2ZjN1pEeFFKQUhMYzdMbkV2cUJHQUFCQWtBQWd4Vk1lMTlnZmxBZ0FNdHpjdVlWOVFvVUFBSUFnQVVDQ3B6cnVZYjlRSUFBQUlFZ0FNRDFQY3p6Q3ZtRjJBb0NwdVluekRQdUhtUWtBQUFnU0FFekwweHRMc0krWWxRQUFnQ0FCd0pROHRiRWsrNGtaQ1FBQUNCSUFBQkFrQUppTzQxcldZRjh4R3dFQUFFRUNnS2w0U21OTjloY3pFUUFBRUNRQUFDQklBREFOeDdOc3dUNWpGZ0lBQUlJRUFBQUVDUUNtNEZpV0xkbHZ6RUFBQUVDUUFBQ0FJQUVBQUVFQ2dPRjVIOHNlN0R0R0p3QUFJRWdBQUVDUUFBQ0FJQUhBMEx5SFpVLzJIeU1UQUFBUUpBQUFJRWdBQUVDUUFBQ0FJQUVBQUVFQ0FBQ0NCQUREOGlkWUhJRjl5S2dFQUFBRUNRQUFDQklBQUJBa0FBQWdTQUFBUUpBQUFJQWdBUUFBUVFJQUFJSUVBQUFFQ1FBQUNCSUFBQkFrQUFBZ1NBQUFRSkFBQUlBZ0FRQUFRUUlBQUlJRUFNUDY5T0hkM3BjQTlpSERFZ0FBRUNRQUFDQklBQUJBa0FBQWdDQUJBQUJCQWdBQWdnUUFRL01uV096Si9tTmtBZ0FBZ2dRQUFBUUpBQUFJRWdBTXozdFk5bURmTVRvQkFBQkJBZ0FBZ2dRQUFBUUpBS2JnZlN4YnN0K1lnUUFBZ0NBQkFBQkJBb0JwT0pabEMvWVpzeEFBQUJBa0FBQWdTQUF3RmNlenJNbitZaVlDQUFDQ0JBRFQ4WlRHR3V3clppTUFBQ0JJQUFCQWtBQmdTbzVyV1pMOXhJd0VBQUFFQ1FDbTVhbU5KZGhIekVvQUFFQ1FBR0JxbnQ1NGh2M0R6QVFBMDNNVDV4SDJEYk1UQUFBUUpBQkk4RFRIUGV3WENnUUFBQVFKQURJODFYRUwrNFFLQVVDS216dlgyQitVQ0FBQUNCSUE1SGpLNHhMN2dob0JRSktiUGVmc0I0b0VBRmx1K3B4TzlnRmRBZ0FBZ2dRQWFaNysycXcvWlFLQVBFT2d5YnBUSndEZ1pCalVXRzhRQVBDTm9kQmduZUV6QVFCbkRJZTVXVi80VGdBQVFKQUFnQmM4SmM3SnVzS1BCQUJjWUZqTXhYckN6d1FBdk1MUW1JTjFoTXZlN0gwQmNHUmZoOGZiOXg5M3ZoTHVaZkREZFU0QTRBYUd5VmlzRi95YUFJQWJHU3Bqc0U1d0d3RUFkekJjanMzNndPMEVBTnpKa0RrbTZ3TDM4U1ZBZUlBdkJ4Nkh3UStQY1FJQVR6Qjg5dVh6aDhjSkFIaVNJYlFQbnpzOHh5c0FXSUJYQXRzeCtHRVpUZ0JnUVliVHVueStzQnduQUxBd3B3SExNL2hoZVFJQVZpSUVubWZ3dzNxOEFvQ1ZHV0tQOGJuQnVwd0F3QWFjQnR6TzRJZHRDQURZa0JCNG5jRVAyeElBc0lQellWZU9BVU1mOWlNQVlHZkZVd0dESC9ZbkFPQWdaajhWTVBUaFdBUUFITkFzTVdEb3czRUpBRGk0bDBQMHlFRmc0TU00QkFBTTVraEJZT0REdUFRQURPN2FFRjRpRGd4NW1KTUFnSWtaM3NCci9DdGdBQWdTQUFBUUpBQUFJRWdBQUVDUUFBQ0FJQUVBQUVFQ0FBQ0NCQUFBQkFrQUFBZ1NBQUFRSkFBQUlFZ0FBRUNRQUFDQUlBRUFBRUVDQUFDQ0JBQUFCQWtBQUFnU0FBQVFKQUFBSUVnQUFFQ1FBQUNBSUFFQUFFRUNBQUNDQkFBQUJBa0FBQWdTQUFBUUpBQUFJRWdBQUVDUUFBQ0FJQUVBQUVFQ0FBQ0NCQUFBQkFrQUFBZ1NBQUFRSkFBQUlFZ0FBRUNRQUFDQUlBRUFBRUVDQUFDQ0JBQUFCQWtBQUFnU0FBQVFKQUFBSUVnQUFFQ1FBQUNBSUFFQUFFRUNBQUNDQkFBQUJBa0FBQWdTQUFBUUpBQUFJRWdBQUVDUUFBQ0FJQUVBQUVFQ0FBQ0NCQUFBQkFrQUFBZ1NBQUFRSkFBQUlFZ0FBRUNRQUFDQUlBRUFBRUVDQUFDQ0JBQUFCQWtBQUFnU0FBQVFKQUFBSUVnQUFFQ1FBQUNBSUFFQUFFRUNBQUNDQkFBQUJBa0FBQWdTQUFBUUpBQUFJRWdBQUVDUUFBQ0FJQUVBQUVFQ0FBQ0NCQUFBQkFrQUFBZ1NBQUFRSkFBQUlFZ0FBRUNRQUFDQUlBRUFBRUVDQUFDQ0JBQUFCQWtBQUFnU0FBQVFKQUFBSUVnQUFFQ1FBQUNBSUFFQUFFRUNBQUNDQkFBQUJBa0FBQWdTQUFBUUpBQUFJRWdBQUVDUUFBQ0FJQUVBQUVFQ0FBQ0NCQUFBQkFrQUFBZ1NBQUFRSkFBQUlFZ0FBRUNRQUFDQUlBRUFBRUVDQUFDQ0JBQUFCQWtBQUFnU0FBQVFKQUFBSUVnQUFFQ1FBQUNBSUFFQUFFRUNBQUNDQkFBQUJBa0FBQWdTQUFBUUpBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBTDc1SDRBN1VFODF0a0ZCQUFBQUFFbEZUa1N1UW1DQyIsICJzaXplcyI6ICI1MTJ4NTEyIiwgInR5cGUiOiAiaW1hZ2UvcG5nIiwgInB1cnBvc2UiOiAibWFza2FibGUiIH0KICBdCn0K">
+<link rel="icon" type="image/png" sizes="192x192" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAEi0lEQVR4nO3czVHkRgCGYQ3lOHwlJGJwBJx88okIHAMhcXUi+LKzxbKjGf10S939Pc95C6Sq71VrYIvL1JiP15fPs6+Bup7f3i9nX8PVqRdi7FydFcXh39ToeeTIGA77RobPWkeEUP0bGD571Qyh2hc2fEqrEULxL2j41FYyhKdSX2iajJ9jlNxZkZIMn7PsPQ12nwDGz5n27m9XAMZPC/bscHMAxk9Ltu5xUwDGT4u27HJ1AMZPy9buc1UAxk8P1ux0cQDGT0+W7nVRAMZPj5bs9mEAxk/PHu236H+FgN7cDcDTnxHc2/FsAMbPSOb27BWIaDcD8PRnRLd27QQg2m8BePozsu/7dgIQ7ZcAPP1J8HXnTgCi/QzA058k1707AYgmAKJdpsnrD7mcAEQTANEEQDQBEO3JB2CSOQGIJgCiCYBoAiCaAIgmAKIJgGgCIJoAiCYAogmAaAIgmgCIJgCiCYBoAiCaAIgmAKIJgGgCIJoAiCYAogmAaAIgmgCIJgCiCYBoAiCaAIj2x9kXkOTPv/9d/G//++evilfC1cWfR69nzeAfEUQdAqig5PC/E0JZAiik5ujniGE/H4ILOGP8Z37fkTgBdmhpgE6DbZwAG7U0/mlq73p6IYANWh1bq9fVMgGs1PrIWr++1ghghV7G1ct1tkAAC/U2qt6u9ywCWKDXMfV63UcSwAO9j6j3669NAHeMMp5R7qMGARBNADNGe2qOdj+lCOCGUccy6n3tIQCiCYBoAvhm9NeE0e9vLQEQTQBfpDwdU+5zCQEQTQBEEwDRBPBD2ntx2v3OEQDRBEA0ARBNAEQTANEEQDQBEE0ARBMA0QRANAH8kPbnxdPud44AiCYAogmAaAL4IuW9OOU+lxAA0QTwzehPx9Hvby0BEE0ARBPADaO+Jox6X3sIYMZoYxntfkoRANEEcMcoT81R7qMGATzQ+3h6v/7aBLBAryPq9bqPJICFehtTb9d7FgGs0MuoernOFghgpdbH1fr1tUYAG7Q6slavq2UC2Ki1sbV2Pb24fLy+fJ59Eb0780+NG/4+ToACzhqh8e/nBKig5olg9GUJoKKSIRh+HQI40JogDP4YAiCaD8FEEwDRBEA0ARBNAEQTANEEQDQBEE0ARBMA0QRANAEQTQBEEwDRBEA0ARBNAEQTANEEQDQBEE0ARBMA0QRANAEQTQBEEwDRBEA0ARBNAER7en57v5x9EXAWJwDRBEA0ARBNAER7mqZp8kGYRM9v7xcnANEEQLSfAXgNIsl1704Aov0SgFOABF937gQg2m8BOAUY2fd9OwGIdjMApwAjurVrJwDRZgNwCjCSuT3fPQFEwAju7dgrENEeBuAUoGeP9rvoBBABPVqy28WvQCKgJ0v3uuozgAjowZqdrv4QLAJatnafm34KJAJatGWXm38MKgJasnWPu34PIAJasGeHu38RJgLOtHd/Rcf78fryWfLrwZxSD96i/xXCacARSu6s2mCdBpRW4wFb/YktBPaq+WZx2CuLEFjriFfqw9/ZhcAjR36WPPVDqxi4OusHKP8D0dZJqvf9H10AAAAASUVORK5CYII=">
+<link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAIAAACyr5FlAAAC30lEQVR4nO3dzY3bVhSAUTpIHWnLNaSCWWXlIlKbt6kkiwEMAfYnz48oPl6esxYGF7jf44MWGn75/vJ1g1/54+gBWJc4SOIgiYMkDpI4SOIgiYMkDpI4SOIgiYMkDpI4SOIgiYMkDpI4SOIgiYMkDpI4SOIgiYMkDpI4SOIgiYMkDpI4SOIgiYMkDpI4SOIgiYMkDpI4SOIgiYMkDpI4SOIgiYMkDpI4SOIgiYMkDpI4SOIgiYMkDpI4SOIgiYMkDpI4SOIgiYMkDtKfRw9wsL/++ff+B/779vdzJlnQl+8vX4+e4dl+G0S5WijXiuPDWdy6TiJXieMhWdy6QiLz43h4FrdmJzL828quZTzh7x9rchzP2dzgPmZeK4csbN4VM/DJcdRRnvcImRbHsRsa1se0OHigUXGscHBXmOFR5sSxzlbWmeSThsSx2j5Wm+djhsTBHibEseYxXXOqd5kQBzs5fRwrH9CVZ3uL08fBfs4dx/pHc/0J7zh3HOxKHCRxkE4cx1mu87PM+bMTx8HexEESB0kcJHGQxEESB0kcJHGQxEE6cRxn+fnhWeb82YnjYG/iIImDdO441r/O15/wjnPHwa5OH8fKR3Pl2d7i9HGwnwlxrHlA15zqXSbEwU6GxLHaMV1tno8ZEse20j7WmeST5sSxrbGVFWZ4lFFx8FjT4jj24E56bGzz4tiO29CwMrap/9761dN+hzgvi1cDnxw/PGdnU8vYZsex7b+5wWVss6+VW97U9AFXieOVd7y9y7XieOXtkG90xThuea/sHVePgzuGf1vhM8RBEgdJHCRxkMRBEgdJHCRxkMRBEgdJHCRxkMRBEgdJHCRxkMRBEgdJHCRxkMRBEgdJHCRxkMRBEgdJHCRxkMRBEgdJHCRxkMRBEgdJHCRxkMRBEgdJHCRxkMRBEgdJHCRxkMRBEgdJHCRxkMRBEgdJHCRxkMRBEgdJHCRxkMRBEgdJHKT/AeDxeDMvEmChAAAAAElFTkSuQmCC">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,500;8..60,600&family=Inter:wght@400;500;600&display=swap');
+:root{--bg:#F7F4EE;--bubble-bot:#FFFFFF;--bubble-user:#D97757;--line:#E7E1D6;--text:#2B2520;--text-dim:#928C7F;--accent:#D97757;--accent-soft:#F1DDD2;--err:#B23B3B;}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent;margin:0;padding:0;}
+body{background:var(--bg);font-family:'Inter',system-ui,sans-serif;color:var(--text);}
+#pinScreen{position:fixed;inset:0;background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:28px;z-index:999;}
+.pin-logo{width:56px;height:56px;border-radius:16px;background:var(--accent);display:flex;align-items:center;justify-content:center;}
+.pin-dot-inner{width:18px;height:18px;border-radius:50%;background:var(--bg);}
+.pin-title{font-family:'Source Serif 4',serif;font-size:22px;font-weight:600;}
+.pin-dots{display:flex;gap:14px;}
+.pin-dot{width:14px;height:14px;border-radius:50%;border:2px solid var(--accent);background:transparent;transition:background .15s;}
+.pin-dot.filled{background:var(--accent);}
+.pin-pad{display:grid;grid-template-columns:repeat(3,72px);gap:12px;}
+.pin-key{width:72px;height:72px;border-radius:50%;border:1px solid var(--line);background:#fff;font-size:20px;font-weight:500;cursor:pointer;display:flex;align-items:center;justify-content:center;font-family:'Inter',sans-serif;color:var(--text);transition:background .1s;}
+.pin-key:active{background:var(--accent-soft);}
+.pin-key.del{font-size:16px;color:var(--text-dim);}
+.pin-error{color:var(--err);font-size:13px;height:18px;}
+#app{display:none;flex-direction:column;height:100vh;max-width:600px;margin:0 auto;}
+#app.visible{display:flex;}
+.nexus-header{display:flex;align-items:center;justify-content:space-between;padding:14px 16px;border-bottom:1px solid var(--line);flex-shrink:0;}
+.brand{display:flex;align-items:center;gap:10px;}
+.mark{width:28px;height:28px;border-radius:8px;background:var(--accent);display:flex;align-items:center;justify-content:center;}
+.mark-dot{width:9px;height:9px;border-radius:50%;background:var(--bg);}
+.brand-name{font-family:'Source Serif 4',serif;font-weight:600;font-size:18px;}
+.header-right{display:flex;align-items:center;gap:10px;}
+.voice-state{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--text-dim);}
+.vdot{width:6px;height:6px;border-radius:50%;background:#9AC18A;}
+.vdot.off{background:var(--text-dim);}
+.status-bar{display:flex;gap:8px;padding:6px 16px;background:#fff;border-bottom:1px solid var(--line);flex-shrink:0;flex-wrap:wrap;}
+.status-pill{font-size:11px;padding:3px 10px;border-radius:999px;background:var(--accent-soft);color:var(--accent);font-weight:500;display:flex;align-items:center;gap:4px;cursor:pointer;}
+.status-pill.off{background:#f0f0f0;color:var(--text-dim);}
+.thread{flex:1;overflow-y:auto;padding:18px 16px 8px;display:flex;flex-direction:column;gap:14px;}
+.row{display:flex;}
+.row.user{justify-content:flex-end;}
+.row.bot{justify-content:flex-start;}
+.bubble{max-width:82%;padding:11px 14px;border-radius:16px;font-size:14.5px;line-height:1.5;}
+.row.user .bubble{background:var(--bubble-user);color:#fff;border-bottom-right-radius:4px;}
+.row.bot .bubble{background:var(--bubble-bot);border:1px solid var(--line);border-bottom-left-radius:4px;}
+.tag{display:inline-block;margin-top:6px;font-size:11px;background:var(--accent-soft);color:var(--accent);padding:2px 8px;border-radius:999px;font-weight:500;}
+.tag.err{background:#F4E1E1;color:var(--err);}
+.tag.green{background:#e6f4e6;color:#2e7d32;}
+.typing{display:flex;gap:4px;padding:4px 2px;}
+.typing span{width:6px;height:6px;border-radius:50%;background:var(--text-dim);animation:bounce 1s infinite ease-in-out;}
+.typing span:nth-child(2){animation-delay:.15s;}
+.typing span:nth-child(3){animation-delay:.3s;}
+@keyframes bounce{0%,60%,100%{transform:translateY(0);opacity:.4}30%{transform:translateY(-4px);opacity:1}}
+.empty-state{margin:auto 0;text-align:center;padding:0 24px;}
+.empty-state h1{font-family:'Source Serif 4',serif;font-size:22px;font-weight:600;margin-bottom:6px;}
+.empty-state p{color:var(--text-dim);font-size:14px;}
+.suggestions{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-top:18px;}
+.sugg{background:#fff;border:1px solid var(--line);color:var(--text);font-size:13px;padding:8px 13px;border-radius:999px;cursor:pointer;font-family:'Inter',sans-serif;}
+.sugg:active{border-color:var(--accent);}
+.composer{display:flex;align-items:flex-end;gap:8px;padding:10px 12px;border-top:1px solid var(--line);background:var(--bg);flex-shrink:0;}
+.mic-btn{width:42px;height:42px;border-radius:50%;flex-shrink:0;border:1px solid var(--line);background:#fff;display:flex;align-items:center;justify-content:center;cursor:pointer;position:relative;}
+.mic-btn.listening{background:var(--accent);border-color:var(--accent);}
+.mic-btn.listening::before{content:'';position:absolute;inset:-5px;border-radius:50%;border:2px solid var(--accent);opacity:.5;animation:pulse 1.2s infinite;}
+@keyframes pulse{0%{transform:scale(.9);opacity:.6}100%{transform:scale(1.35);opacity:0}}
+.input-wrap{flex:1;background:#fff;border:1px solid var(--line);border-radius:22px;padding:4px 6px 4px 16px;display:flex;align-items:center;gap:6px;}
+.text-input{flex:1;border:none;outline:none;background:transparent;font-family:'Inter',sans-serif;font-size:14.5px;color:var(--text);padding:9px 0;}
+.send-btn{width:34px;height:34px;border-radius:50%;border:none;background:var(--accent);display:flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0;}
+.send-btn:disabled{opacity:.35;}
+.ai-body{font-size:14px;line-height:1.6;}
+.ai-body p{margin:0 0 6px;}
+.ai-body p:last-child{margin-bottom:0;}
+.ai-body strong{font-weight:600;}
+.ai-body ul,.ai-body ol{padding-left:18px;margin:4px 0 6px;}
+.ai-body li{margin-bottom:2px;}
+.ai-body code{font-family:monospace;font-size:12.5px;background:#F1EDE5;border:1px solid var(--line);padding:1px 5px;border-radius:4px;}
+.ai-body pre{background:#F1EDE5;border:1px solid var(--line);border-radius:8px;padding:10px;margin:6px 0;overflow-x:auto;}
+.ai-body pre code{background:none;border:none;}
+.ai-body h3{font-family:'Source Serif 4',serif;font-size:15px;font-weight:600;margin:8px 0 3px;}
+.yt-player{margin-top:8px;border-radius:10px;overflow:hidden;background:#000;aspect-ratio:16/9;width:100%;}
+.yt-player iframe{width:100%;height:100%;border:none;display:block;}
+.camera-preview{margin-top:8px;border-radius:10px;overflow:hidden;width:100%;max-height:260px;object-fit:cover;display:block;}
+.map-frame{margin-top:8px;border-radius:10px;overflow:hidden;width:100%;height:220px;border:none;display:block;}
+.action-btn{display:inline-block;margin-top:8px;margin-right:6px;padding:8px 14px;border-radius:999px;background:var(--accent);color:#fff;font-size:13px;font-weight:500;cursor:pointer;border:none;font-family:'Inter',sans-serif;}
+.action-btn.ghost{background:transparent;color:var(--accent);border:1px solid var(--accent);}
+</style>
+</head>
+<body>
+
+<div id="pinScreen">
+  <div class="pin-logo"><div class="pin-dot-inner"></div></div>
+  <div class="pin-title">Nexus</div>
+  <div class="pin-dots">
+    <div class="pin-dot" id="d0"></div><div class="pin-dot" id="d1"></div>
+    <div class="pin-dot" id="d2"></div><div class="pin-dot" id="d3"></div>
+    <div class="pin-dot" id="d4"></div><div class="pin-dot" id="d5"></div>
+  </div>
+  <div class="pin-pad">
+    <button class="pin-key" onclick="pinPress('1')">1</button>
+    <button class="pin-key" onclick="pinPress('2')">2</button>
+    <button class="pin-key" onclick="pinPress('3')">3</button>
+    <button class="pin-key" onclick="pinPress('4')">4</button>
+    <button class="pin-key" onclick="pinPress('5')">5</button>
+    <button class="pin-key" onclick="pinPress('6')">6</button>
+    <button class="pin-key" onclick="pinPress('7')">7</button>
+    <button class="pin-key" onclick="pinPress('8')">8</button>
+    <button class="pin-key" onclick="pinPress('9')">9</button>
+    <button class="pin-key del" onclick="pinDel()">&#9003;</button>
+    <button class="pin-key" onclick="pinPress('0')">0</button>
+    <button class="pin-key" onclick="pinSubmit()">&#8629;</button>
+  </div>
+  <div class="pin-error" id="pinError"></div>
+</div>
+
+<div id="app">
+  <header class="nexus-header">
+    <div class="brand">
+      <div class="mark"><div class="mark-dot"></div></div>
+      <div class="brand-name">Nexus</div>
+    </div>
+    <div class="header-right">
+      <div class="voice-state">
+        <span class="vdot off" id="vdot"></span>
+        <span id="voiceLabel">checking mic&hellip;</span>
+      </div>
+    </div>
+  </header>
+  <div class="status-bar" id="statusBar">
+    <div class="status-pill off" id="pillLoc" onclick="requestLocation()">&#127759; Location</div>
+    <div class="status-pill off" id="pillBat" id="pillBat">&#128267; Battery</div>
+    <div class="status-pill off" id="pillCam" onclick="openCamera()">&#128247; Camera</div>
+    <div class="status-pill off" id="pillShare">&#128279; Share</div>
+  </div>
+  <div class="thread" id="thread">
+    <div class="empty-state" id="emptyState">
+      <h1>What do you need?</h1>
+      <p>Your AI assistant &mdash; talk, type, or tap a suggestion.</p>
+      <div class="suggestions">
+        <div class="sugg" onclick="respond('Where am I?')">Where am I?</div>
+        <div class="sugg" onclick="respond('open spotify and play afrobeats')">open spotify</div>
+        <div class="sugg" onclick="respond('set a timer for 10 minutes')">set a timer</div>
+        <div class="sugg" onclick="respond('take a photo')">take a photo</div>
+        <div class="sugg" onclick="respond('search latest football scores on google')">search google</div>
+        <div class="sugg" onclick="respond('call 911')">make a call</div>
+        <div class="sugg" onclick="respond('share this page')">share</div>
+        <div class="sugg" onclick="respond('what is my battery level')">battery level</div>
+        <div class="sugg" onclick="respond('vibrate')">vibrate</div>
+        <div class="sugg" onclick="respond('explain the water cycle')">ask anything</div>
+      </div>
+    </div>
+  </div>
+  <div class="composer">
+    <button class="mic-btn" id="micBtn" onclick="toggleMic()" aria-label="Talk">
+      <svg width="19" height="19" viewBox="0 0 24 24"><path id="micIcon" fill="#928C7F" d="M12 14a3 3 0 0 0 3-3V6a3 3 0 0 0-6 0v5a3 3 0 0 0 3 3zm5-3a5 5 0 0 1-10 0H5a7 7 0 0 0 6 6.92V21h2v-3.08A7 7 0 0 0 19 11h-2z"/></svg>
+    </button>
+    <div class="input-wrap">
+      <input class="text-input" id="textInput" type="text" placeholder="Message Nexus&hellip;" autocomplete="off" onkeydown="if(event.key==='Enter')handleSend()">
+    </div>
+    <button class="send-btn" id="sendBtn" onclick="handleSend()" disabled aria-label="Send">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="#fff"><path d="M2 21l21-9L2 3v7l15 2-15 2v7z"/></svg>
+    </button>
+  </div>
+</div>
+
+<!-- hidden file input for camera/file -->
+<input type="file" id="fileInput" accept="image/*" capture="environment" style="display:none" onchange="handleFileCapture(event)">
+
+<script>
+const CORRECT_PIN = '123456';
+const GEMINI_PROXY_URL = '/api/gemini'; // backend proxy holds the real key server-side
+
+// ── PIN ──────────────────────────────────────────────────────────────────────
+let pinEntry = '';
+function pinPress(d){if(pinEntry.length>=6)return;pinEntry+=d;updateDots();if(pinEntry.length===6)setTimeout(pinSubmit,120);}
+function pinDel(){pinEntry=pinEntry.slice(0,-1);updateDots();}
+function updateDots(){for(let i=0;i<6;i++)document.getElementById('d'+i).classList.toggle('filled',i<pinEntry.length);}
+function pinSubmit(){
+  if(pinEntry===CORRECT_PIN){
+    document.getElementById('pinScreen').style.display='none';
+    document.getElementById('app').classList.add('visible');
+    initVoice(); initBattery();
+  }else{
+    document.getElementById('pinError').textContent='Wrong pin, try again';
+    pinEntry='';updateDots();
+    setTimeout(()=>document.getElementById('pinError').textContent='',1800);
+  }
+}
+
+// ── APPS ──────────────────────────────────────────────────────────────────────
+const APPS = {
+  spotify:   {a:['spotify'],          o:'https://open.spotify.com',          s:q=>'https://open.spotify.com/search/'+encodeURIComponent(q)},
+  youtube:   {a:['youtube','yt'],     o:'https://www.youtube.com',           s:q=>'https://www.youtube.com/results?search_query='+encodeURIComponent(q)},
+  whatsapp:  {a:['whatsapp'],         o:'https://wa.me/',                    s:null},
+  instagram: {a:['instagram','insta'],o:'https://www.instagram.com',         s:q=>'https://www.instagram.com/explore/search/keyword/?q='+encodeURIComponent(q)},
+  maps:      {a:['maps','google maps'],o:'https://maps.google.com',          s:q=>'https://www.google.com/maps/search/'+encodeURIComponent(q)},
+  twitter:   {a:['twitter','x'],      o:'https://twitter.com',               s:q=>'https://twitter.com/search?q='+encodeURIComponent(q)},
+  gmail:     {a:['gmail','email'],    o:'https://mail.google.com',           s:null},
+  amazon:    {a:['amazon'],           o:'https://www.amazon.com',            s:q=>'https://www.amazon.com/s?k='+encodeURIComponent(q)},
+  netflix:   {a:['netflix'],          o:'https://www.netflix.com',           s:q=>'https://www.netflix.com/search?q='+encodeURIComponent(q)},
+  tiktok:    {a:['tiktok'],           o:'https://www.tiktok.com',            s:q=>'https://www.tiktok.com/search?q='+encodeURIComponent(q)},
+  reddit:    {a:['reddit'],           o:'https://www.reddit.com',            s:q=>'https://www.reddit.com/search/?q='+encodeURIComponent(q)},
+  discord:   {a:['discord'],          o:'https://discord.com/app',           s:null},
+  google:    {a:['google'],           o:'https://www.google.com',            s:q=>'https://www.google.com/search?q='+encodeURIComponent(q)},
+  chrome:    {a:['chrome','browser'], o:'https://www.google.com',            s:q=>'https://www.google.com/search?q='+encodeURIComponent(q)},
+  facebook:  {a:['facebook','fb'],    o:'https://www.facebook.com',          s:q=>'https://www.facebook.com/search/top/?q='+encodeURIComponent(q)},
+  snapchat:  {a:['snapchat','snap'],  o:'https://www.snapchat.com',          s:null},
+  telegram:  {a:['telegram'],         o:'https://web.telegram.org',          s:null},
+  uber:      {a:['uber'],             o:'https://m.uber.com',                s:null},
+  wikipedia: {a:['wikipedia','wiki'], o:'https://en.wikipedia.org',          s:q=>'https://en.wikipedia.org/wiki/Special:Search?search='+encodeURIComponent(q)},
+  github:    {a:['github'],           o:'https://github.com',                s:q=>'https://github.com/search?q='+encodeURIComponent(q)},
+  clock:     {a:['clock','alarm'],    o:'intent://com.android.clock#Intent;scheme=android-app;end', s:null},
+  settings:  {a:['settings'],         o:'intent://settings#Intent;scheme=android-app;end', s:null},
+  calculator:{a:['calculator','calc'],o:'intent://com.android.calculator2#Intent;scheme=android-app;end',s:null},
+};
+function findApp(name){name=name.trim().toLowerCase();for(const k in APPS){if(APPS[k].a.includes(name))return APPS[k];}for(const k in APPS){if(APPS[k].a.some(a=>name.includes(a)))return APPS[k];}return null;}
+
+// ── YOUTUBE ───────────────────────────────────────────────────────────────────
+function extractYTVideoId(t){const m=t.match(/(?:youtube\.com\/(?:watch\?v=|shorts\/)|youtu\.be\/)([\w-]{11})/i);return m?m[1]:null;}
+function extractYTURL(t){const m=t.match(/(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/shorts\/)[\w-]+(?:[?&][\w=&-]*)?/i);return m?(m[0].startsWith('http')?m[0]:'https://'+m[0]):null;}
+
+// ── INTENT DETECTION ──────────────────────────────────────────────────────────
+function detectIntent(raw){
+  const text=raw.trim().replace(/[.?!]+$/,'');
+  const low=text.toLowerCase();
+  let m;
+
+  // YouTube URL
+  const ytUrl=extractYTURL(raw);
+  if(ytUrl){const vid=extractYTVideoId(ytUrl);if(vid)return{type:'yt_play',videoId:vid};}
+
+  // YouTube search
+  if(/\b(?:download|watch|play)\b/.test(low)&&/youtube|youtu\.be|\byt\b/.test(low))
+    return{type:'app_search',app:'youtube',query:low.replace(/\b(?:download|watch|play|on youtube|on yt)\b/g,'').trim()};
+
+  // Phone
+  if(m=low.match(/^call\s+(.+)$/))return{type:'call',target:m[1]};
+  if(m=low.match(/^(?:text|message|sms)\s+(.+)$/))return{type:'sms',target:m[1]};
+
+  // Email
+  if(m=low.match(/^(?:email|mail)\s+(.+)$/))return{type:'email',target:m[1]};
+
+  // Timer / Alarm
+  if(m=low.match(/^set\s+(?:a\s+)?timer\s+(?:for\s+)?(.+)$/))return{type:'timer',duration:m[1]};
+  if(m=low.match(/^(?:set\s+(?:an?\s+)?)?alarm\s+(?:for\s+|at\s+)?(.+)$/))return{type:'alarm',time:m[1]};
+
+  // Location
+  if(/\b(?:where am i|my location|my address|current location|find me|what'?s? my location)\b/.test(low))return{type:'location'};
+  if(m=low.match(/^(?:navigate|directions?|take me|get me)\s+(?:to\s+)?(.+)$/))return{type:'navigate',dest:m[1]};
+  if(m=low.match(/^(?:find|search|look\s*up)\s+(.+?)\s+(?:near(?:\s+me)?|nearby|close\s+by)$/))return{type:'nearby',query:m[1]};
+
+  // Camera / Photo
+  if(/\b(?:take\s+(?:a\s+)?photo|open\s+camera|camera|selfie|take\s+(?:a\s+)?picture|scan)\b/.test(low))return{type:'camera'};
+
+  // Share
+  if(/\b(?:share\s+(?:this|page|link)|share)\b/.test(low))return{type:'share'};
+
+  // Clipboard
+  if(m=low.match(/^copy\s+(?:this\s+)?["']?(.+?)["']?\s+to\s+clipboard$/))return{type:'copy',text:m[1]};
+  if(m=low.match(/^copy\s+["']?(.+?)["']?$/))return{type:'copy',text:m[1]};
+
+  // Vibrate
+  if(/\b(?:vibrate|buzz)\b/.test(low))return{type:'vibrate'};
+
+  // Battery
+  if(/\b(?:battery|power\s+level|charge)\b/.test(low))return{type:'battery'};
+
+  // Torch / Flashlight
+  if(/\b(?:torch|flashlight|flash|light)\b/.test(low))return{type:'torch'};
+
+  // Fullscreen
+  if(/\b(?:full\s*screen|fullscreen)\b/.test(low))return{type:'fullscreen'};
+
+  // Web search
+  if(m=low.match(/^(?:search|google|look\s*up|find)\s+(.+?)(?:\s+on\s+(?:google|the\s+web|internet))?$/))
+    return{type:'app_search',app:'google',query:m[1]};
+
+  // Open app + search
+  if(m=low.match(/^open\s+(?:the\s+)?([a-z0-9 ]+?)\s+and\s+(?:search(?:\s+for)?|play|look\s*up|find)\s+(.+)$/))return{type:'app_search',app:m[1],query:m[2]};
+  if(m=low.match(/^(?:search(?:\s+for)?|play|look\s*up|find)\s+(.+?)\s+(?:on|in)\s+([a-z0-9 ]+)$/))return{type:'app_search',app:m[2],query:m[1]};
+  if(m=low.match(/^open\s+(?:the\s+)?([a-z0-9 ]+)$/))return{type:'app_open',app:m[1]};
+
+  return{type:'ai',question:text};
+}
+
+// ── DEVICE FEATURES ───────────────────────────────────────────────────────────
+let userLat=null, userLon=null;
+
+function requestLocation(){
+  const pill=document.getElementById('pillLoc');
+  pill.textContent='...';
+  navigator.geolocation.getCurrentPosition(pos=>{
+    userLat=pos.coords.latitude; userLon=pos.coords.longitude;
+    pill.className='status-pill';
+    pill.textContent='GPS on';
+  },()=>{pill.className='status-pill off';pill.textContent='Location off';});
+}
+
+function getLocationAndRespond(rowId){
+  navigator.geolocation.getCurrentPosition(pos=>{
+    userLat=pos.coords.latitude; userLon=pos.coords.longitude;
+    const url='https://nominatim.openstreetmap.org/reverse?format=json&lat='+userLat+'&lon='+userLon;
+    fetch(url,{headers:{'Accept-Language':'en'}})
+      .then(r=>r.json())
+      .then(d=>{
+        const addr=d.display_name||('Lat: '+userLat.toFixed(5)+', Lon: '+userLon.toFixed(5));
+        const mapUrl='https://maps.google.com/?q='+userLat+','+userLon;
+        setRow(rowId,
+          '<div class="ai-body"><p><strong>You are here:</strong><br>'+esc(addr)+'</p></div>'+
+          '<iframe class="map-frame" src="https://www.openstreetmap.org/export/embed.html?bbox='+(userLon-0.01)+','+(userLat-0.01)+','+(userLon+0.01)+','+(userLat+0.01)+'&layer=mapnik&marker='+userLat+','+userLon+'" loading="lazy"></iframe>'+
+          '<br><button class="action-btn" onclick="window.open(\''+mapUrl+'\',\'_blank\')">Open in Google Maps</button>'+
+          '<span class="tag green">GPS</span>'
+        );
+        document.getElementById('pillLoc').className='status-pill';
+        document.getElementById('pillLoc').textContent='GPS on';
+      }).catch(()=>{
+        setRow(rowId,'<div class="ai-body"><p>Lat: '+userLat.toFixed(5)+', Lon: '+userLon.toFixed(5)+'</p></div><span class="tag green">GPS</span>');
+      });
+  },err=>{
+    setRow(rowId,'Could not get location. Please allow location permission in your browser.<br><span class="tag err">Location denied</span>');
+  });
+}
+
+function navigateTo(dest, rowId){
+  const url='https://www.google.com/maps/dir/?api=1&destination='+encodeURIComponent(dest)+(userLat?'&origin='+userLat+','+userLon:'');
+  setRow(rowId,'Navigating to <strong>'+esc(dest)+'</strong>.<br><button class="action-btn" onclick="window.open(\''+url+'\',\'_blank\')">Open Google Maps</button><span class="tag green">Maps</span>');
+}
+
+function searchNearby(query, rowId){
+  const q=query+(userLat?' near '+userLat.toFixed(4)+','+userLon.toFixed(4):'near me');
+  const url='https://www.google.com/maps/search/'+encodeURIComponent(q);
+  setRow(rowId,'Searching for <strong>'+esc(query)+'</strong> nearby.<br><button class="action-btn" onclick="window.open(\''+url+'\',\'_blank\')">Open in Maps</button><span class="tag green">Nearby</span>');
+  setTimeout(()=>window.open(url,'_blank'),900);
+}
+
+function doVibrate(rowId){
+  if(navigator.vibrate){navigator.vibrate([200,100,200]);setRow(rowId,'Vibrated! <span class="tag green">Done</span>');}
+  else{setRow(rowId,'Vibration not supported on this browser.<span class="tag err">Unavailable</span>');}
+}
+
+async function getBattery(rowId){
+  const pill=document.getElementById('pillBat');
+  if(navigator.getBattery){
+    const bat=await navigator.getBattery();
+    const pct=Math.round(bat.level*100);
+    const charging=bat.charging?' (charging)':' (not charging)';
+    pill.className='status-pill';
+    pill.textContent='Bat: '+pct+'%';
+    setRow(rowId,'Battery is at <strong>'+pct+'%</strong>'+charging+'.<span class="tag green">Battery</span>');
+  } else {
+    setRow(rowId,'Battery API not available on this browser.<span class="tag err">Unavailable</span>');
+  }
+}
+
+async function initBattery(){
+  if(navigator.getBattery){
+    const bat=await navigator.getBattery();
+    const pill=document.getElementById('pillBat');
+    const update=()=>{
+      const pct=Math.round(bat.level*100);
+      pill.className='status-pill';
+      pill.textContent='Bat: '+pct+'%';
+    };
+    update();
+    bat.addEventListener('levelchange',update);
+    bat.addEventListener('chargingchange',update);
+  }
+}
+
+function setTimer(durationStr, rowId){
+  // parse e.g. "5 minutes", "30 seconds", "1 hour"
+  let ms=0;
+  const h=durationStr.match(/(\d+)\s*h/i); if(h) ms+=parseInt(h[1])*3600000;
+  const min=durationStr.match(/(\d+)\s*m/i); if(min) ms+=parseInt(min[1])*60000;
+  const sec=durationStr.match(/(\d+)\s*s/i); if(sec) ms+=parseInt(sec[1])*1000;
+  if(!ms){setRow(rowId,"Couldn't understand that duration. Try '5 minutes' or '30 seconds'.<span class='tag err'>Error</span>");return;}
+  const label=durationStr.trim();
+  setRow(rowId,'Timer set for <strong>'+esc(label)+'</strong>. I\'ll notify you when done!<span class="tag green">Timer</span>');
+  setTimeout(()=>{
+    if(Notification.permission==='granted'){new Notification('Nexus Timer','Timer for '+label+' is done!');}
+    alert('Timer done: '+label);
+    addRow('bot','Your <strong>'+esc(label)+'</strong> timer is up! <span class="tag green">Done</span>');
+  },ms);
+  // request notification permission
+  if(Notification.permission==='default') Notification.requestPermission();
+}
+
+function setAlarm(timeStr, rowId){
+  const alarmUrl='intent://alarm#Intent;S.hours=0;S.message=Nexus+Alarm;scheme=android-app;end';
+  const clockUrl='https://www.google.com/search?q=set+alarm+for+'+encodeURIComponent(timeStr);
+  setRow(rowId,
+    'To set an alarm for <strong>'+esc(timeStr)+'</strong>, tap below (opens your clock app or Google):<br>'+
+    '<button class="action-btn" onclick="window.open(\''+clockUrl+'\',\'_blank\')">Set Alarm via Google</button>'+
+    '<span class="tag green">Alarm</span>'
+  );
+}
+
+function openCamera(){
+  document.getElementById('fileInput').click();
+  document.getElementById('pillCam').className='status-pill';
+  document.getElementById('pillCam').textContent='Camera on';
+}
+
+let capturedImageData=null;
+function handleFileCapture(e){
+  const file=e.target.files[0];if(!file)return;
+  const reader=new FileReader();
+  reader.onload=ev=>{
+    capturedImageData=ev.target.result;
+    const tid=typingRow();
+    setRow(tid,
+      '<img src="'+capturedImageData+'" class="camera-preview" alt="Captured photo">'+
+      '<br><button class="action-btn" onclick="analyzeImage()">Analyze with AI</button>'+
+      '<button class="action-btn ghost" onclick="shareImage()">Share</button>'+
+      '<span class="tag green">Photo</span>'
+    );
+  };
+  reader.readAsDataURL(file);
+}
+
+async function analyzeImage(){
+  if(!capturedImageData)return;
+  const tid=typingRow();
+  const base64=capturedImageData.split(',')[1];
+  const mime=capturedImageData.split(';')[0].split(':')[1];
+  conversationHistory.push({role:'user',parts:[{inline_data:{mime_type:mime,data:base64}},{text:'Describe what you see in this image in detail.'}]});
+  try{
+    const res=await fetch(GEMINI_PROXY_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({contents:conversationHistory})});
+    const data=await res.json();
+    const text=data?.candidates?.[0]?.content?.parts?.[0]?.text||"Couldn't analyse image.";
+    conversationHistory.push({role:'model',parts:[{text:text}]});
+    setRow(tid,'<div class="ai-body">'+mdToHtml(text)+'</div><span class="tag green">Vision</span>');
+  }catch(e){conversationHistory.pop();setRow(tid,'Error analysing image.<span class="tag err">Error</span>');}
+}
+
+function shareImage(){
+  if(!capturedImageData)return;
+  fetch(capturedImageData).then(r=>r.blob()).then(blob=>{
+    const file=new File([blob],'nexus-photo.jpg',{type:blob.type});
+    if(navigator.share&&navigator.canShare({files:[file]})){
+      navigator.share({files:[file],title:'Photo from Nexus'});
+    } else {alert('Sharing files not supported on this browser.');}
+  });
+}
+
+function doShare(rowId){
+  if(navigator.share){
+    navigator.share({title:'Nexus',text:'Check out Nexus AI assistant',url:window.location.href})
+      .then(()=>setRow(rowId,'Shared! <span class="tag green">Done</span>'))
+      .catch(()=>setRow(rowId,'Share cancelled.<span class="tag">Cancelled</span>'));
+    document.getElementById('pillShare').className='status-pill';
+  } else {
+    setRow(rowId,'Share not supported. Copy the URL manually.<span class="tag err">Unavailable</span>');
+  }
+}
+
+function doCopy(text, rowId){
+  navigator.clipboard.writeText(text)
+    .then(()=>setRow(rowId,'Copied to clipboard: <strong>'+esc(text)+'</strong> <span class="tag green">Copied</span>'))
+    .catch(()=>setRow(rowId,'Could not copy to clipboard.<span class="tag err">Error</span>'));
+}
+
+let torchOn=false, torchStream=null;
+async function doTorch(rowId){
+  try{
+    if(torchOn){
+      torchStream.getTracks().forEach(t=>t.stop());torchOn=false;torchStream=null;
+      setRow(rowId,'Flashlight off. <span class="tag">Torch</span>');return;
+    }
+    torchStream=await navigator.mediaDevices.getUserMedia({video:{facingMode:'environment'}});
+    const track=torchStream.getVideoTracks()[0];
+    await track.applyConstraints({advanced:[{torch:true}]});
+    torchOn=true;
+    setRow(rowId,'Flashlight on! Say "torch" again to turn off. <span class="tag green">Torch On</span>');
+  }catch(e){setRow(rowId,'Flashlight not supported or permission denied.<span class="tag err">Unavailable</span>');}
+}
+
+function doFullscreen(rowId){
+  if(!document.fullscreenElement){
+    document.documentElement.requestFullscreen().then(()=>setRow(rowId,'Fullscreen on. <span class="tag green">Done</span>')).catch(()=>setRow(rowId,'Fullscreen not allowed.<span class="tag err">Denied</span>'));
+  } else {
+    document.exitFullscreen();setRow(rowId,'Exited fullscreen. <span class="tag">Done</span>');
+  }
+}
+
+// ── MARKDOWN ──────────────────────────────────────────────────────────────────
+function mdToHtml(md){
+  return md
+    .replace(/```[\w]*\n?([\s\S]*?)```/g,'<pre><code>$1</code></pre>')
+    .replace(/`([^`]+)`/g,'<code>$1</code>')
+    .replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>')
+    .replace(/\*(.+?)\*/g,'<em>$1</em>')
+    .replace(/^#{2,3} (.+)$/gm,'<h3>$1</h3>')
+    .replace(/^- (.+)$/gm,'<li>$1</li>')
+    .replace(/(<li>[\s\S]+?<\/li>)/g,s=>'<ul>'+s+'</ul>')
+    .split('\n\n').map(p=>p.startsWith('<')?p:'<p>'+p.trim()+'</p>').join('');
+}
+function esc(s){return String(s).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));}
+
+// ── CHAT UI ───────────────────────────────────────────────────────────────────
+let msgCount=0;
+function addRow(role,inner){
+  const es=document.getElementById('emptyState');if(es)es.remove();
+  const thread=document.getElementById('thread');
+  const id='m'+(++msgCount);
+  const row=document.createElement('div');row.className='row '+role;row.id=id;
+  const bub=document.createElement('div');bub.className='bubble';bub.innerHTML=inner;
+  row.appendChild(bub);thread.appendChild(row);thread.scrollTop=thread.scrollHeight;return id;
+}
+function setRow(id,inner){const row=document.getElementById(id);if(row)row.querySelector('.bubble').innerHTML=inner;document.getElementById('thread').scrollTop=99999;}
+function typingRow(){return addRow('bot','<div class="typing"><span></span><span></span><span></span></div>');}
+
+// ── GEMINI AI ────────────────────────────────────────────────────────────────
+let conversationHistory=[];
+const SYSTEM_PROMPT='You are Nexus, a smart personal AI assistant running on Android. Answer clearly and concisely. Use markdown: **bold** for key terms, bullet lists where helpful, numbered steps, code blocks where needed. For homework always show working. Remember everything the user has told you in this conversation. You can help with anything: questions, writing, coding, maths, advice, and more.';
+
+async function handleAI(question,label,rowId){
+  conversationHistory.push({role:'user',parts:[{text:question}]});
+  try{
+    const body={system_instruction:{parts:[{text:SYSTEM_PROMPT}]},contents:conversationHistory};
+    const res=await fetch(GEMINI_PROXY_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});
+    const data=await res.json();
+    const text=data?.candidates?.[0]?.content?.parts?.[0]?.text||"Sorry, couldn't get a response.";
+    conversationHistory.push({role:'model',parts:[{text:text}]});
+    setRow(rowId,'<div class="ai-body">'+mdToHtml(text)+'</div><span class="tag">'+label+'</span>');
+  }catch(e){
+    conversationHistory.pop();
+    setRow(rowId,"Couldn't reach AI &mdash; check your connection.<br><span class=\"tag err\">Error</span>");
+  }
+}
+
+// ── RESPOND ───────────────────────────────────────────────────────────────────
+async function respond(raw){
+  if(!raw.trim())return;
+  addRow('user',esc(raw));
+  const tid=typingRow();
+  const intent=detectIntent(raw);
+
+  switch(intent.type){
+    case 'yt_play':
+      setTimeout(()=>setRow(tid,'<div class="yt-player"><iframe src="https://www.youtube.com/embed/'+intent.videoId+'?autoplay=1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div><span class="tag">YouTube</span>'),400);
+      break;
+    case 'call':{
+      const d=intent.target.replace(/\D/g,'');
+      setTimeout(()=>{setRow(tid,'Calling <strong>'+esc(intent.target)+'</strong>.<br><span class="tag">Dialing</span>');setTimeout(()=>{location.href='tel:'+d;},900);},400);
+      break;}
+    case 'sms':{
+      const d=intent.target.replace(/\D/g,'');
+      setTimeout(()=>{setRow(tid,'Opening message to <strong>'+esc(intent.target)+'</strong>.<br><span class="tag">Messages</span>');setTimeout(()=>{location.href='sms:'+d;},900);},400);
+      break;}
+    case 'email':{
+      setTimeout(()=>{setRow(tid,'Opening email to <strong>'+esc(intent.target)+'</strong>.<br><span class="tag">Email</span>');setTimeout(()=>{location.href='mailto:'+intent.target;},900);},400);
+      break;}
+    case 'timer':
+      setTimer(intent.duration, tid);
+      break;
+    case 'alarm':
+      setAlarm(intent.time, tid);
+      break;
+    case 'location':
+      setRow(tid,'Getting your location...');
+      getLocationAndRespond(tid);
+      break;
+    case 'navigate':
+      setTimeout(()=>navigateTo(intent.dest, tid),400);
+      break;
+    case 'nearby':
+      setTimeout(()=>searchNearby(intent.query, tid),400);
+      break;
+    case 'camera':
+      setRow(tid,'Opening camera...<span class="tag green">Camera</span>');
+      setTimeout(openCamera,400);
+      break;
+    case 'share':
+      doShare(tid);
+      break;
+    case 'copy':
+      doCopy(intent.text, tid);
+      break;
+    case 'vibrate':
+      doVibrate(tid);
+      break;
+    case 'battery':
+      await getBattery(tid);
+      break;
+    case 'torch':
+      await doTorch(tid);
+      break;
+    case 'fullscreen':
+      doFullscreen(tid);
+      break;
+    case 'app_open':{
+      const app=findApp(intent.app);
+      if(app){setTimeout(()=>{setRow(tid,'Opening <strong>'+esc(intent.app)+'</strong>.<br><span class="tag">Opened</span>');setTimeout(()=>window.open(app.o,'_blank'),900);},400);}
+      else{await handleAI(raw,'Nexus',tid);}
+      break;}
+    case 'app_search':{
+      const app=findApp(intent.app);
+      if(app&&app.s){setTimeout(()=>{setRow(tid,'Searching <strong>'+esc(intent.app)+'</strong> for "'+esc(intent.query)+'".<br><span class="tag">'+esc(intent.app)+'</span>');setTimeout(()=>window.open(app.s(intent.query),'_blank'),900);},400);}
+      else if(app){setTimeout(()=>{setRow(tid,'Opening <strong>'+esc(intent.app)+'</strong>.<br><span class="tag">Opened</span>');setTimeout(()=>window.open(app.o,'_blank'),900);},400);}
+      else{await handleAI(raw,'Nexus',tid);}
+      break;}
+    default:
+      await handleAI(intent.question,'Nexus',tid);
+  }
+}
+
+// ── INPUT ─────────────────────────────────────────────────────────────────────
+const textInput=document.getElementById('textInput');
+const sendBtn=document.getElementById('sendBtn');
+textInput.addEventListener('input',()=>{sendBtn.disabled=!textInput.value.trim();});
+function handleSend(){const v=textInput.value.trim();if(!v)return;respond(v);textInput.value='';sendBtn.disabled=true;}
+
+// ── VOICE ─────────────────────────────────────────────────────────────────────
+let recognition=null,listening=false;
+function initVoice(){
+  const SR=window.SpeechRecognition||window.webkitSpeechRecognition;
+  const vdot=document.getElementById('vdot');
+  const vlabel=document.getElementById('voiceLabel');
+  if(!SR){vlabel.textContent='voice unavailable';return;}
+  recognition=new SR();
+  recognition.lang='en-US';recognition.interimResults=true;recognition.continuous=false;
+  recognition.onstart=()=>{listening=true;document.getElementById('micBtn').classList.add('listening');document.getElementById('micIcon').setAttribute('fill','#fff');vdot.classList.remove('off');vlabel.textContent='listening\u2026';};
+  recognition.onresult=(e)=>{let t='';for(let i=e.resultIndex;i<e.results.length;i++)t+=e.results[i][0].transcript;textInput.value=t;sendBtn.disabled=!t.trim();if(e.results[e.results.length-1].isFinal){respond(t.trim());textInput.value='';sendBtn.disabled=true;}};
+  recognition.onerror=()=>{vlabel.textContent="didn't catch that";};
+  recognition.onend=()=>{listening=false;document.getElementById('micBtn').classList.remove('listening');document.getElementById('micIcon').setAttribute('fill','#928C7F');vdot.classList.add('off');vlabel.textContent='voice ready';};
+  vlabel.textContent='voice ready';
+}
+function toggleMic(){if(!recognition)return;if(listening)recognition.stop();else{try{recognition.start();}catch(e){}}}
+
+// ── PWA INSTALL (Android/Chrome) ─────────────────────────────────────────────
+// Registers sw.js if it's hosted alongside this file. Harmless no-op (silent
+// catch) if it's missing — e.g. opened directly as a local file or artifact.
+if('serviceWorker' in navigator && (location.protocol==='https:'||location.hostname==='localhost')){
+  navigator.serviceWorker.register('sw.js').catch(()=>{});
+}
+</script>
+</body>
+</html>
